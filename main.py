@@ -200,7 +200,7 @@ def nome_bonito_algoritmo(alg):
         "amplitude": "Amplitude",
         "profundidade": "Profundidade",
         "custo_uniforme": "Custo Uniforme",
-        "gulosa": "Gulosa",
+        "gulosa": "Greedy",
         "a_estrela": "A*",
         "aia_estrela": "AIA*",
         "prof_limitada": "Profundidade Limitada",
