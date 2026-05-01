@@ -1,9 +1,11 @@
+# ================= IMPORTS =================
 import pygame
 import sys
 import math
 from buscaNP import buscaNP
 from buscaP import buscaP
 
+# ================= CLASSES =================
 class Fantasma:
     def __init__(self, x, y, cor, escala=1):
         self.x = x
@@ -80,11 +82,13 @@ class PacmanMenu:
         # olho
         pygame.draw.circle(tela, (0, 0, 0), (self.x + 4, self.y - 5), 2)
 
+# ================= INICIALIZAÇÃO =================
 pygame.init()
 
+# ==================== SONS =======================
 pygame.mixer.init()
-click_sound = pygame.mixer.Sound("click_arcade.wav")
-pygame.mixer.music.load("paclab.wav")
+click_sound = pygame.mixer.Sound("assets/click_arcade.wav")
+pygame.mixer.music.load("assets/paclab.wav")
 pygame.mixer.music.set_volume(0.5)
 pygame.mixer.music.play(-1)  # tocar em loop
 
@@ -112,10 +116,10 @@ ALTURA = LINHAS * TAM + 120
 tela = pygame.display.set_mode((LARGURA, ALTURA))
 pygame.display.set_caption("Pac-Lab")
 
-fonte = pygame.font.Font("PressStart2P.ttf", 12)
-fonte_titulo_menu = pygame.font.Font("PressStart2P.ttf", 30)
-fonte_titulo = pygame.font.Font("PressStart2P.ttf", 20)
-fonte_subtitulo = pygame.font.Font("PressStart2P.ttf", 16)
+fonte = pygame.font.Font("assets/PressStart2P.ttf", 12)
+fonte_titulo_menu = pygame.font.Font("assets/PressStart2P.ttf", 30)
+fonte_titulo = pygame.font.Font("assets/PressStart2P.ttf", 20)
+fonte_subtitulo = pygame.font.Font("assets/PressStart2P.ttf", 16)
 
 # ---------------- CORES ----------------
 BRANCO = (255,255,255)
@@ -190,36 +194,6 @@ def botao(texto, x, y, w, h):
     return False
 
 # ---------------- MENU ----------------
-def desenhar_menu():
-    tela.fill((0, 0, 0))
-
-
-    titulo = fonte_titulo_menu.render("Escolha o Algoritmo", True, VERMELHO)
-    tela.blit(titulo, (260, 80))
-
-    y = 170
-
-    if botao("1. Amplitude", 130, y, 350, 35): return "amplitude"
-    if botao("2. Profundidade", 130, y+60, 350, 35): return "profundidade"
-    if botao("3. Custo Uniforme", 130, y+120, 350, 35): return "custo_uniforme"
-    if botao("4. Greedy", 130, y+180, 350, 35): return "gulosa"
-    if botao("5. A*", 130, y+240, 350, 35): return "a_estrela"
-    if botao("6. AIA*", 630, y, 350, 35): return "aia_estrela"
-    if botao("7. Profundidade Limitada", 630, y+60, 350, 35): return "prof_limitada"
-    if botao("8. Aprofundamento Iterativo", 630, y+120, 350, 35): return "aprofundamento"
-    if botao("9. Bidirecional", 630, y+180, 350, 35): return "bidirecional"
-
-    pacman.update()
-    pacman.draw(tela)
-
-    by = fonte.render("Por: Eduarda Pontes e Júlia Lima", True, BRANCO)
-    tela.blit(by, (370, 590))
-
-    for f in fantasmas:
-        f.update()
-        f.draw(tela) 
-
-    return None
 
 def nome_bonito_algoritmo(alg):
     nomes = {
@@ -258,6 +232,40 @@ def resetar_pacman_menu():
     pacman.y = 180
     pacman.target_x = 80
     pacman.target_y = 180
+
+# ---------------- MENU ----------------
+def desenhar_menu():
+    tela.fill((0, 0, 0))
+
+
+    titulo = fonte_titulo_menu.render("Escolha o Algoritmo", True, VERMELHO)
+    tela.blit(titulo, (260, 80))
+
+    y = 170
+
+    if botao("1. Amplitude", 130, y, 350, 35): return "amplitude"
+    if botao("2. Profundidade", 130, y+60, 350, 35): return "profundidade"
+    if botao("3. Custo Uniforme", 130, y+120, 350, 35): return "custo_uniforme"
+    if botao("4. Greedy", 130, y+180, 350, 35): return "gulosa"
+    if botao("5. A*", 130, y+240, 350, 35): return "a_estrela"
+    if botao("6. AIA*", 630, y, 350, 35): return "aia_estrela"
+    if botao("7. Profundidade Limitada", 630, y+60, 350, 35): return "prof_limitada"
+    if botao("8. Aprofundamento Iterativo", 630, y+120, 350, 35): return "aprofundamento"
+    if botao("9. Bidirecional", 630, y+180, 350, 35): return "bidirecional"
+
+    pacman.update()
+    pacman.draw(tela)
+
+    by = fonte.render("Por: Eduarda Pontes e Júlia Lima", True, BRANCO)
+    tela.blit(by, (370, 590))
+
+    for f in fantasmas:
+        f.update()
+        f.draw(tela) 
+
+    return None
+
+# ---------------- GRID ----------------
 
 def desenhar_parede(tela, i, j):
     x = j*TAM + OFFSET_X
