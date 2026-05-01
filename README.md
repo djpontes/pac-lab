@@ -131,14 +131,14 @@ O sistema possui duas telas principais:
 7. ESTRUTURA DO PROJETO
 ------------------------------------------------------
 
-main.py → código principal da aplicação
-node.py → estrutura de nó para buscas não informadas
-nodeP.py → estrutura de nó para buscas informadas (heurísticas)
-buscaNP.py → algoritmos de busca não informada
-buscaP.py → algoritmos de busca informada
-mapa.txt → representação do labirinto
-requirements.txt → dependências do projeto
-assets/ → fontes e sons
+main.py            → código principal da aplicação
+node.py            → estrutura de nó para buscas não informadas
+nodeP.py           → estrutura de nó para buscas informadas (heurísticas)
+buscaNP.py         → algoritmos de busca não informada
+buscaP.py          → algoritmos de busca informada
+mapa.txt           → representação do labirinto
+requirements.txt   → dependências do projeto
+assets/            → fontes, sons e recursos visuais
 
 ------------------------------------------------------
 8. OBSERVAÇÕES
