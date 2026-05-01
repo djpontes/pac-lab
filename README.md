@@ -124,21 +124,21 @@ O sistema possui duas telas principais:
 
     Botões disponíveis:
     - Iniciar → executa o algoritmo selecionado
-    - Limpar → remove início, fim, caminho e custo
+    - Limpar → limpa o início, fim, caminho e custo
     - Menu → retorna à tela inicial (menu)
 
 ------------------------------------------------------
 7. ESTRUTURA DO PROJETO
 ------------------------------------------------------
 
-main.py            → código principal da aplicação
-node.py            → estrutura de nó para buscas não informadas
-nodeP.py           → estrutura de nó para buscas informadas (heurísticas)
-buscaNP.py         → algoritmos de busca não informada
-buscaP.py          → algoritmos de busca informada
-mapa.txt           → representação do labirinto
-requirements.txt   → dependências do projeto
-assets/            → fontes, sons e recursos visuais
+main.py → código principal da aplicação
+node.py → estrutura de nó para buscas não informadas
+nodeP.py → estrutura de nó para buscas informadas (heurísticas)
+buscaNP.py → algoritmos de busca não informada
+buscaP.py → algoritmos de busca informada
+mapa.txt → representação do labirinto
+requirements.txt → dependências do projeto
+assets/ → fontes e sons
 
 ------------------------------------------------------
 8. OBSERVAÇÕES
