@@ -73,7 +73,7 @@ Para instalar todas as bibliotecas necessárias, execute:
 
     pip install -r requirements.txt
 
-OBS: Se caso a instalação pelo requirements.txt de errado, execute:
+OBS: Se caso a instalação pelo requirements.txt der errado, execute:
 
     pip install pygame numpy
 
@@ -121,6 +121,13 @@ O sistema possui duas telas principais:
         1º clique → define o ponto de origem (Pac-Man)
         2º clique → define o ponto de destino (Fantasma)
     - Clique em “Iniciar” para executar a busca
+        Ao iniciar, será possível visualizar o custo e o caminho encontrado.
+    
+        O caminho é exibido dentro de uma caixa de texto.
+        Caso o conteúdo ultrapasse o espaço visível, utilize o scroll do mouse
+        sobre a área do caminho para visualizar o restante.
+    
+        OBS: A caixa não possui barra de rolagem visível, porém o scroll funciona normalmente.
 
     Botões disponíveis:
     - Iniciar → executa o algoritmo selecionado
